@@ -1,0 +1,18 @@
+from bs4 import BeautifulSoup
+import requests
+
+#session = requests.Session()
+user_agent = "User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+headers = {"User-Agent":user_agent}
+url = "https://www.qiushibaike.com/text/"
+
+req = requests.get(url,headers=headers)
+bs0bj = BeautifulSoup(req.text,'html.parser')
+
+duanzi = bs0bj.findAll("div",{"class":"content"})
+print(len(duanzi))
+i = 0
+with open('duanzis.txt','w') as  f:
+    for duanzis in duanzi:
+        i = i + 1
+        print(str(i) + duanzis.get_text(),file=f)
