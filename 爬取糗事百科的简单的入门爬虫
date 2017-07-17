@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 
-#session = requests.Session()
 user_agent = "User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
 headers = {"User-Agent":user_agent}
 url = "https://www.qiushibaike.com/text/"
